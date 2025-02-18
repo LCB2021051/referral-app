@@ -4,6 +4,13 @@ This is a **Full Stack Refer & Earn System** built using **Next.js (Frontend)** 
 
 ---
 
+## 🚀 Live Deployment Links
+
+🔹 **Frontend (Vercel):** [Referral App](https://referral-app-omega.vercel.app)  
+🔹 **Backend (Render):** [API Server](https://referral-app-cjrm.onrender.com)
+
+---
+
 ## 🚀 Tech Stack
 
 ### **Frontend (Next.js)**
