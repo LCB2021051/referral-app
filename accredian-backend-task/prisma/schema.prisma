@@ -2,10 +2,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// if using mysql
+//datasource db {
+// provider = "mysql"
+//  url      = env("DATABASE_URL")
+//}
+
+// if using postgresql
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 
 model Referral {
   id            Int    @id @default(autoincrement())
