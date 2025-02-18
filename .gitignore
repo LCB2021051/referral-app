@@ -1,0 +1,105 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+
+# Node.js Dependencies (For both frontend and backend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build Output (Next.js)
+.next/
+.vercel/
+out/
+dist/
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+/*.log
+
+# Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Prisma (Backend Only)
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/
+
+# MySQL Dump (if used)
+*.sql
+
+# Backend (Express.js) Specific Files
+*.DS_Store
+coverage/
+dump.rdb
+*.pid
+*.seed
+
+# Next.js Cache
+.next/cache/
+
+# Mac System Files
+Thumbs.db
+.DS_Store
+
+# Package Lock Files (Optional, keep if version control is needed)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
