@@ -183,7 +183,7 @@ npx prisma migrate reset
 
 ## 👨‍💻 **Contributors**
 
-- **[Your Name]** – _Full Stack Developer_
+- **Vivek Korah** – _Full Stack Developer_
 
 ---
 
