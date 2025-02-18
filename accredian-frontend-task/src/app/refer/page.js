@@ -8,10 +8,12 @@ export default function ReferEarn() {
   const [friendName, setFriendName] = useState("");
   const [friendEmail, setFriendEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(""); // ✅ Success message state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSuccessMessage(""); // Clear previous messages
 
     const formData = {
       referrerName,
@@ -31,8 +33,7 @@ export default function ReferEarn() {
       );
 
       if (response.ok) {
-        alert("Referral sent successfully!");
-        setShowModal(false);
+        setSuccessMessage("Referral sent successfully! 🎉"); // ✅ Show success message
         setReferrerName("");
         setReferrerEmail("");
         setFriendName("");
@@ -60,7 +61,10 @@ export default function ReferEarn() {
           and enjoy special benefits.
         </p>
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            setShowModal(true);
+            setSuccessMessage(""); // ✅ Reset success message when opening modal
+          }}
           className="mt-6 px-8 py-3 text-lg font-medium bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition duration-300"
         >
           Refer Now
@@ -83,45 +87,54 @@ export default function ReferEarn() {
               </button>
             </div>
 
-            {/* Referral Form */}
-            <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-              <InputField
-                label="Your Name"
-                type="text"
-                placeholder="Enter your name"
-                value={referrerName}
-                onChange={(e) => setReferrerName(e.target.value)}
-              />
-              <InputField
-                label="Your Email"
-                type="email"
-                placeholder="Enter your email"
-                value={referrerEmail}
-                onChange={(e) => setReferrerEmail(e.target.value)}
-              />
-              <InputField
-                label="Friend's Name"
-                type="text"
-                placeholder="Enter your friend's name"
-                value={friendName}
-                onChange={(e) => setFriendName(e.target.value)}
-              />
-              <InputField
-                label="Friend's Email"
-                type="email"
-                placeholder="Enter your friend's email"
-                value={friendEmail}
-                onChange={(e) => setFriendEmail(e.target.value)}
-              />
+            {/* Show success message */}
+            {successMessage && (
+              <div className="mt-4 bg-green-100 text-green-700 p-3 rounded-md text-center">
+                {successMessage}
+              </div>
+            )}
 
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 disabled:bg-gray-400"
-                disabled={loading}
-              >
-                {loading ? "Sending..." : "Send Referral"}
-              </button>
-            </form>
+            {/* Referral Form (Hidden when success message is shown) */}
+            {!successMessage && (
+              <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+                <InputField
+                  label="Your Name"
+                  type="text"
+                  placeholder="Enter your name"
+                  value={referrerName}
+                  onChange={(e) => setReferrerName(e.target.value)}
+                />
+                <InputField
+                  label="Your Email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={referrerEmail}
+                  onChange={(e) => setReferrerEmail(e.target.value)}
+                />
+                <InputField
+                  label="Friend's Name"
+                  type="text"
+                  placeholder="Enter your friend's name"
+                  value={friendName}
+                  onChange={(e) => setFriendName(e.target.value)}
+                />
+                <InputField
+                  label="Friend's Email"
+                  type="email"
+                  placeholder="Enter your friend's email"
+                  value={friendEmail}
+                  onChange={(e) => setFriendEmail(e.target.value)}
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 disabled:bg-gray-400"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Send Referral"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}
