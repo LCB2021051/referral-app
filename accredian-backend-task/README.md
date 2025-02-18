@@ -27,7 +27,7 @@ backend/
 ### 📌 **1️⃣ Install Dependencies**
 
 ```sh
-cd backend
+cd accredian-backend-task
 npm install
 ```
 

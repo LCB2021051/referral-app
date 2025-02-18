@@ -28,7 +28,7 @@ frontend/
 ### 📌 **1️⃣ Install Dependencies**
 
 ```sh
-cd frontend
+cd accredian-frontend-task
 npm install
 ```
 
